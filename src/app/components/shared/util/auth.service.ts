@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +6,8 @@ import {Observable, of} from "rxjs";
 export class AuthService {
   names = ['John', 'Jane', 'Doe'];
 
-  getCurrentlyLoggedInUserName(): Observable<string> {
+  getCurrentlyLoggedInUserName(): string {
     const randomIndex = Math.floor(Math.random() * this.names.length);
-    return of(this.names[randomIndex]);
+    return this.names[randomIndex];
   }
 }
