@@ -1,13 +1,13 @@
 import {Routes} from '@angular/router';
 import {PageNotFoundComponent} from "./components/page-not-found.component";
-import {HomeComponent} from "./components/home/home.component";
+import {KundenOverviewComponent} from "./components/kunden/overview/kunden-overview.component";
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/kunden',
     pathMatch: 'full'
   },
-  {path: 'home', component: HomeComponent},
+  {path: 'kunden', component: KundenOverviewComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
