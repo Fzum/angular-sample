@@ -1,4 +1,4 @@
-import {Component, computed, input} from '@angular/core';
+import {Component} from '@angular/core';
 import {NgClass} from "@angular/common";
 
 @Component({
@@ -6,18 +6,10 @@ import {NgClass} from "@angular/common";
   standalone: true,
   imports: [NgClass],
   template: `
-    <span [ngClass]="sizeStyleClass()" class="loading loading-infinity"></span>
+    <span class="loading loading-ring loading-lg"></span>
+
   `,
 })
 export class UiLoadingSpinnerComponent {
-  size = input.required<LoadingSpinnerSize>();
-
-  sizeStyleClass = computed(() => ({
-    'loading-xs': this.size() === 'xs',
-    'loading-sm': this.size() === 'sm',
-    'loading-md': this.size() === 'md',
-    'loading-lg': this.size() === 'lg',
-  }));
 }
 
-export type LoadingSpinnerSize = 'xs' | 'sm' | 'md' | 'lg';

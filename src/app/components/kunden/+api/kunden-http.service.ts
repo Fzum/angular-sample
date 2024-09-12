@@ -5,7 +5,7 @@ import {KundenOverview} from "../+model/kunden.model";
 @Injectable({
   providedIn: 'root'
 })
-export class KundenOverviewHttpService {
+export class KundenHttpService {
 
   kundenOverviews: KundenOverview[] = [
     {

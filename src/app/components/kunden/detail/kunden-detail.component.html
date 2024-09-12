@@ -1,1 +1,16 @@
-<p>kunden-detail works!</p>
+<div class="h-full w-full flex items-center justify-center">
+  <div class="card bg-base-100 image-full w-96 shadow-xl">
+    <figure>
+      <img
+        src="https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Homer-Simpson.The-Simpsons.webp"
+        alt="Homer"/>
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">Erfolg!</h2>
+      <p>Ich bin kunde mit der Id: {{ kundenId$ | async }}</p>
+      <div class="card-actions justify-end">
+        <button [routerLink]="'/kunden'" class="btn btn-primary">Zurück</button>
+      </div>
+    </div>
+  </div>
+</div>
