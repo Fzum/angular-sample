@@ -1,6 +1,5 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {ActivatedRoute, RouterLink} from "@angular/router";
-import {BehaviorSubject, map} from "rxjs";
+import {Component, OnInit} from '@angular/core';
+import {RouterLink} from "@angular/router";
 import {AsyncPipe} from "@angular/common";
 
 @Component({
@@ -14,14 +13,10 @@ import {AsyncPipe} from "@angular/common";
   styleUrl: './kunden-detail.component.scss'
 })
 export class KundenDetailComponent implements OnInit {
-  #activatedRoute = inject(ActivatedRoute);
-
-  kundenId$ = new BehaviorSubject('')
+  // todo 1) inject ActivatedRoute or Router to extract the id from the route
+  // todo 2) extract the id from the route and show it in the template
 
   ngOnInit(): void {
-    this.#activatedRoute.paramMap.pipe(map(params => params.get("id"))).subscribe(id => {
-      this.kundenId$.next(id ?? '');
-    });
   }
 }
 

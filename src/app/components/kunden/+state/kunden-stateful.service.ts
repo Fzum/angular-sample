@@ -1,23 +1,15 @@
-import {inject, Injectable} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {KundenOverview} from "../+model/kunden.model";
-import {BehaviorSubject, map} from "rxjs";
-import {KundenHttpService} from "../+api/kunden-http.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class KundenStatefulService {
-  readonly kundenOverviewState = new BehaviorSubject<KundenOverviewState>({loading: false, kunden: []});
-  readonly isKundenOverviewsLoading$ = this.kundenOverviewState.pipe(map(state => state.loading));
-  readonly kundenOverviews$ = this.kundenOverviewState.pipe(map(state => state.kunden));
-
-  kundenHttpService = inject(KundenHttpService);
+  // todo 1) inject the http service to load kunden overviews
+  // todo 2) add a behavior subject or signal for the state of the kunden overview (KundenOverviewState)
 
   loadKundenOverviews(): void {
-    this.kundenOverviewState.next({loading: true, kunden: []});
-    this.kundenHttpService.loadKundenOverviews().subscribe(kunden => {
-      this.kundenOverviewState.next({loading: false, kunden});
-    });
+    // todo call the http service to load kunden overviews
   }
 }
 
