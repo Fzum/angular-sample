@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import {UiLoadingSpinnerComponent} from "../shared/ui/ui-loading-spinner.component";
 
 @Component({
-  selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [
+    UiLoadingSpinnerComponent
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
